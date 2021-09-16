@@ -6,7 +6,7 @@
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 14:58:29 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/08/30 18:59:22 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/09/08 15:43:51 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
+	const unsigned char	*s1;
+	const unsigned char	*s2;
 	size_t				i;
-	const unsigned char	*t;
-	const unsigned char	*r;
 
 	i = 0;
-	t = str1;
-	r = str2;
+	s1 = str1;
+	s2 = str2;
 	while (i < n)
 	{
-		if (t[i] != r[i])
+		if (s1[i] != s2[i])
 		{
-			return (t[i] - r[i]);
+			return (s1[i] - s2[i]);
 		}
 		i++;
 	}

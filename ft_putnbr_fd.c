@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 19:31:03 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/09/10 18:58:41 by mjose-ye         ###   ########.fr       */
+/*   Created: 2021/09/09 20:58:24 by mjose-ye          #+#    #+#             */
+/*   Updated: 2021/09/09 21:18:00 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *find, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	size_t	cont;
 
-	i = ft_strlen(find);
-	if (i == 0)
-		return ((char *)str);
-	while (*str != 0 && len > 0 && i <= len)
+	cont = 0;
+	if (n < 0)
 	{
-		if (ft_strncmp(str, find, i) == 0)
+		write(fd, "-", 1);
+		if (n == -2147483648)
 		{
-			return ((char *)str);
+			n++;
+			n = -n;
+			cont = 1;
 		}
-		len--;
-		str++;
+		else
+			n = -n;
 	}
-	return (0);
+	if (n >= 10)
+		ft_putnbr_fd((n / 10), fd);
+	ft_putchar_fd((n % 10 + '0' + cont), fd);
 }

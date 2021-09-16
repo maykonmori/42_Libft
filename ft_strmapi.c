@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 19:31:03 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/09/10 18:58:41 by mjose-ye         ###   ########.fr       */
+/*   Created: 2021/09/08 18:24:07 by mjose-ye          #+#    #+#             */
+/*   Updated: 2021/09/10 23:04:56 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *find, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	size_t	cont;
+	size_t	slen;
+	char	*nstr;
 
-	i = ft_strlen(find);
-	if (i == 0)
-		return ((char *)str);
-	while (*str != 0 && len > 0 && i <= len)
+	if (!s)
+		return (NULL);
+	cont = 0;
+	slen = ft_strlen(s);
+	nstr = (char *)ft_calloc((slen + 1), sizeof(char));
+	if (nstr == 0)
+		return (NULL);
+	while (s[cont])
 	{
-		if (ft_strncmp(str, find, i) == 0)
-		{
-			return ((char *)str);
-		}
-		len--;
-		str++;
+		nstr[cont] = f(cont, s[cont]);
+		cont++;
 	}
-	return (0);
+	return (nstr);
 }

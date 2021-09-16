@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 19:31:03 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/09/10 18:58:41 by mjose-ye         ###   ########.fr       */
+/*   Created: 2021/09/09 20:26:47 by mjose-ye          #+#    #+#             */
+/*   Updated: 2021/09/10 22:35:49 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *find, size_t len)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
+	size_t	cont;
 
-	i = ft_strlen(find);
-	if (i == 0)
-		return ((char *)str);
-	while (*str != 0 && len > 0 && i <= len)
+	if (!s)
+		return ;
+	cont = 0;
+	while (s[cont] != '\0')
 	{
-		if (ft_strncmp(str, find, i) == 0)
-		{
-			return ((char *)str);
-		}
-		len--;
-		str++;
+		write(fd, &s[cont], 1);
+		cont++;
 	}
-	return (0);
+	ft_putchar_fd('\n', fd);
 }

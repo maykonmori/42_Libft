@@ -6,19 +6,19 @@
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 11:02:00 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/08/30 18:58:17 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/09/06 10:25:22 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
 	unsigned char	*v;
 	unsigned char	t;
 
 	t = (unsigned char)c;
-	v = (unsigned char *)s;
+	v = (unsigned char *)str;
 	while (n--)
 	{
 		if (*v == t)

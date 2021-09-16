@@ -6,7 +6,7 @@
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 15:29:25 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/08/30 20:39:47 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2021/09/02 18:36:01 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	else if (size != 0)
 	{
 		ft_memmove(dest, src, size - 1);
-		dest[size - 1] = 0;
+		dest[size - 1] = '\0';
 	}
 	return (i);
 }
