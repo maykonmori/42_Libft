@@ -6,7 +6,7 @@
 #    By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/25 18:26:07 by mjose-ye          #+#    #+#              #
-#    Updated: 2021/09/10 23:01:51 by mjose-ye         ###   ########.fr        #
+#    Updated: 2022/01/20 00:31:54 by mjose-ye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,10 +48,20 @@ SRCS	=	ft_isalpha.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
+			ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
+			get_next_line.c
 
 OBJS	= ${SRCS:.c=.o}
 
-CC	= clang
+CC	= gcc
 
 CFLAGS	= -Wall -Werror -Wextra -g -I. -c
 

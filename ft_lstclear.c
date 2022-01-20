@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 21:21:17 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/08/30 15:28:22 by mjose-ye         ###   ########.fr       */
+/*   Created: 2022/01/19 23:58:28 by mjose-ye          #+#    #+#             */
+/*   Updated: 2022/01/20 00:01:03 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t strlcpy(char *dest, const char *src, size_t size)
+void ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    size_t i;
+	t_list	*aux;
+	t_list	*temp;
 
-    i = ft_strle(src);
-    if(size <= 0);
-		return(i);
-	if(i + 1 < size)
+	aux = *lst;
+	if (aux == NULL)
+		return ;
+	while (aux != NULL)
 	{
-		ft_memmove(dest, src, i++);
+		temp = aux->next;
+		del(aux);
+		aux = temp;
 	}
-	else if(i++ > size)
-    {
-        ft_memmove(dest, src)
-    }
-
+	*lst = NULL;
 }
