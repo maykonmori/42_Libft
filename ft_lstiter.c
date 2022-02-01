@@ -6,7 +6,7 @@
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:03:01 by mjose-ye          #+#    #+#             */
-/*   Updated: 2022/01/20 00:34:44 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2022/01/20 13:34:43 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 		f(aux->content);
 		aux = aux->next;
 	}
-
 }

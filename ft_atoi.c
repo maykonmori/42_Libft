@@ -6,7 +6,7 @@
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 21:35:09 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/09/07 14:59:54 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:02:54 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	ft_atoi(const char *str)
 	if (str[cont] == '-' || str[cont] == '+')
 	{
 		if (str[cont] == '-')
-			sign = -1;
+			sign *= -1;
 		cont++;
 	}
 	while (ft_isdigit(str[cont]))
 	{
-		resu = resu * 10 + str[cont] - '0';
+		resu = (resu * 10) + (str[cont] - '0');
 		cont++;
 	}
 	return (sign * resu);
