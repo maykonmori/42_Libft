@@ -6,13 +6,13 @@
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:03:01 by mjose-ye          #+#    #+#             */
-/*   Updated: 2022/01/20 13:34:43 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2022/02/07 23:43:22 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*aux;
 

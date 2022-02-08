@@ -6,16 +6,16 @@
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 00:07:29 by mjose-ye          #+#    #+#             */
-/*   Updated: 2022/01/20 00:12:00 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2022/02/07 23:44:41 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new_list;
-	t_list *temp;
+	t_list	*new_list;
+	t_list	*temp;
 
 	new_list = NULL;
 	while (lst != NULL)

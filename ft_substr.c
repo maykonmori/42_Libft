@@ -6,7 +6,7 @@
 /*   By: mjose-ye <mjose-ye@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:32:55 by mjose-ye          #+#    #+#             */
-/*   Updated: 2021/09/14 13:03:09 by mjose-ye         ###   ########.fr       */
+/*   Updated: 2022/02/07 23:46:23 by mjose-ye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-
 	size_t	tstr;
 	char	*dest;
 
